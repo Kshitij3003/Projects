@@ -6,15 +6,13 @@ def sh256(text):
 def mine(block_number,transactions,previous_hash,prefix_zeros):
     nounce=1
     Max_num=100000000000
-    while True:
+    for nounce in range(Max_num):
         text=str(block_number)+transactions+previous_hash+str(nounce)
         new_hash=sh256(text)
         zeros='0'*prefix_zeros
         if(new_hash.startswith(zeros)):
             return new_hash
-        else:
-            nounce=+1
-    raise BaseException(f"couldn't find correct hash after trying {max_nounce} times")
+    raise BaseException(f"couldn't find correct hash after trying {nounce} times")
 
 if __name__=='__main__':
     transactions='''
