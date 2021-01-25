@@ -23,5 +23,9 @@ if __name__=='__main__':
     King->Queen->50
     '''
     difficulty=4
+    import time
+    start=time.time()
     new_hash=mine(2,transactions,'831a73a68b11ec563ed784643d022a9f3cf6ca0ff7b8589ff50622c7d3cfeee0',difficulty)
+    total_time=str((time.time()-start))
+    print("Time Taken to mine is:{}".format(total_time))
     print(new_hash)
